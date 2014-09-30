@@ -7,10 +7,8 @@ A list of features that have been implemented
 
 + color64: A compact 64-dimensional global feature [1], which has been successfully used in [tag relevance estimation] (https://github.com/li-xirong/tagrel/) for social image retrieval [2].
 
----
 
-Usage 
---------
+##Usage 
 
 ```
 from color64 import extractColor64
@@ -19,7 +17,12 @@ print " ".join(map(str,qry_vec))
 0.256603866816 0.0778646543622 0.0402022078633 0.136827707291 0.0814508423209 0.169182538986 0.167500168085 0.198000192642 0.170579746366 0.0639530494809 0.186014354229 0.0420079790056 0.144335106015 0.0430851057172 0.210729986429 0.115369670093 0.0579541511834 0.143578216434 0.168439865112 0.32083979249 0.290238648653 0.0975492745638 0.187142521143 0.265635579824 0.351393431425 0.316409766674 0.156695589423 0.127786517143 0.176223099232 0.0561240203679 0.0 0.0 0.0 0.0 0.0444315187633 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0809062495828 0.20950011909 0.220294803381 0.0990854352713 0.131724730134 0.0877878144383 0.0838116928935 0.185533195734 0.531078636646 0.545228302479 0.239922463894 0.321230560541 0.215354248881 0.195610255003 0.616132199764 0.658942580223 0.369825750589 0.127457588911 0.118111990392 0.138596013188
 ```
 
+The script `doit.sh` shows how to extract features for a set of images
+
+
+##References
+
 1. Mingjing Li, Texture Moment for Content-Based Image Retrieval, ICME 2007
-2. Xirong Li, Cees Snoek, Marcel Worring, Learning social tag relevance by neighbor voting, IEEE Transactions on Multimedia 2009
+2. Xirong Li, Cees Snoek, Marcel Worring, [Learning social tag relevance by neighbor voting]  (http://www.science.uva.nl/research/publications/2009/LiITM2009/), IEEE Transactions on Multimedia 2009
 
  
