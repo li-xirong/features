@@ -5,6 +5,8 @@ import sys, os, time
 from util import checkToSkip
 from optparse import OptionParser
 
+DEFAULT_NEW_SIZE = 256
+
 def printMessage(message_type, trace, message):
     print ('%s %s [%s] %s' % (time.strftime('%d/%m/%Y %H:%M:%S'), message_type, trace, message))
 
@@ -12,6 +14,7 @@ def printMessage(message_type, trace, message):
 def process(options, collection):
     rootpath = options.rootpath
     overwrite = options.overwrite
+    newsize = options.newsize
 
     imagepathFilename = os.path.join(rootpath, collection, "id.imagepath.txt")
     if not os.path.exists(imagepathFilename):
@@ -30,7 +33,7 @@ def process(options, collection):
         if not line.strip():
             continue
         name,fullpath = str.split(line.strip())
-        resultfile = fullpath.replace('ImageData', 'ImageData256x256')
+        resultfile = fullpath.replace('ImageData', 'ImageData%dx%d'%(newsize,newsize))
         if checkToSkip(resultfile, overwrite):
             continue
         try:
@@ -39,7 +42,7 @@ def process(options, collection):
             pass
             
         # The '>' flag is to only apply the resize to images 'greater than' the size given  
-        cmd = "convert %s -resize '256>x256>' %s" % (fullpath, resultfile)        
+        cmd = "convert %s -resize '%d>x%d>' %s" % (fullpath, newsize, newsize, resultfile)        
         os.system(cmd)
         done += 1
         if done % 100 == 0:
@@ -56,6 +59,8 @@ def main(argv=None):
     parser = OptionParser(usage="""usage: %prog [options] collection""")
     parser.add_option("--overwrite", default=0, type="int", help="overwrite existing file (default=0)")
     parser.add_option("--rootpath", default='./', type="string", help="rootpath")
+    parser.add_option("--newsize", default=DEFAULT_NEW_SIZE, type="int", help="newsize (default: %s)" % DEFAULT_NEW_SIZE)
+    
 
     (options, args) = parser.parse_args(argv)
     if len(args) < 1:
