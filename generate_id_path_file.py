@@ -4,7 +4,9 @@ from util import checkToSkip
 from optparse import OptionParser
 
 FILTER_SET = set(str.split(".jpg .png .bmp"))
-
+DATA_PATH = '/local/xirong/VisualSearch'
+if not os.path.exists(DATA_PATH):
+    DATA_PATH = os.path.join(os.environ['HOME'], 'VisualSearch')
 
     
 def process(options, collection):
@@ -57,8 +59,8 @@ def main(argv=None):
         argv = sys.argv[1:]
 
     parser = OptionParser(usage="""usage: %prog [options] collection""")
-    parser.add_option("--overwrite", default=0, type="int", help="overwrite existing file (default=0)")
-    parser.add_option("--rootpath", default='./', type="string", help="rootpath")
+    parser.add_option("--overwrite", default=0, type="int", help="overwrite existing file (default: 0)")
+    parser.add_option("--rootpath", default=DATA_PATH, type="string", help="rootpath (default: %s)"%DATA_PATH)
 
     (options, args) = parser.parse_args(argv)
     if len(args) < 1:
