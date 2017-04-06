@@ -23,6 +23,6 @@ The script `doit.sh` shows how to extract features for a set of images
 ##References
 
 1. Mingjing Li, Texture Moment for Content-Based Image Retrieval, ICME 2007
-2. Xirong Li, Cees Snoek, Marcel Worring, [Learning social tag relevance by neighbor voting]  (http://www.science.uva.nl/research/publications/2009/LiITM2009/), IEEE Transactions on Multimedia 2009
+2. Xirong Li, Cees Snoek, Marcel Worring, [Learning social tag relevance by neighbor voting](http://www.science.uva.nl/research/publications/2009/LiITM2009/), IEEE Transactions on Multimedia 2009
 
  
