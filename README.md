@@ -5,10 +5,10 @@ a python lib for image feature extraction
 
 A list of features that have been implemented
 
-+ color64: A compact 64-dimensional global feature [1], which has been successfully used in [tag relevance estimation] (https://github.com/li-xirong/tagrel/) for social image retrieval [2].
++ color64: A compact 64-dimensional global feature [1], which has been successfully used in [tag relevance estimation](https://github.com/li-xirong/tagrel/) for social image retrieval [2].
 
 
-##Usage 
+## Usage 
 
 ```
 from color64 import extractColor64
@@ -20,7 +20,7 @@ print " ".join(map(str,qry_vec))
 The script `doit.sh` shows how to extract features for a set of images
 
 
-##References
+## References
 
 1. Mingjing Li, Texture Moment for Content-Based Image Retrieval, ICME 2007
 2. Xirong Li, Cees Snoek, Marcel Worring, [Learning social tag relevance by neighbor voting](http://www.science.uva.nl/research/publications/2009/LiITM2009/), IEEE Transactions on Multimedia 2009
